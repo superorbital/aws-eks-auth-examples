@@ -139,7 +139,7 @@ resource "aws_iam_role_policy_attachment" "ec2_list_instances" {
 
 resource "aws_iam_policy" "eks_describe_cluster" {
   count       = var.setup_pod_identity ? 1 : 0
-  name_prefix = "vpc-list-network-"
+  name_prefix = "eks-describe-cluster-"
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
