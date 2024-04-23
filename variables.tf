@@ -28,6 +28,12 @@ variable "create_test_users" {
   default     = false
 }
 
+variable "create_access_entries" {
+  type        = bool
+  description = "Should we create the access entries?"
+  default     = false
+}
+
 variable "setup_irsa" {
   type        = bool
   description = "Should we setup the IRSA components?"

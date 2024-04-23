@@ -126,7 +126,7 @@ module "aws_auth" {
 # We don't create these via the EKS module, because we want more control
 # over when they are created.
 resource "aws_eks_access_entry" "user_three" {
-  count             = var.create_test_users ? 1 : 0
+  count             = var.create_test_users && var.create_access_entries ? 1 : 0
   cluster_name      = module.eks.cluster_name
   kubernetes_groups = []
   principal_arn     = aws_iam_user.user_three[0].arn
@@ -135,7 +135,7 @@ resource "aws_eks_access_entry" "user_three" {
 }
 
 resource "aws_eks_access_policy_association" "user_three" {
-  count = var.create_test_users ? 1 : 0
+  count = var.create_test_users && var.create_access_entries ? 1 : 0
 
   access_scope {
     namespaces = ["default", "kube-node-lease", "kube-public", "kube-system"]

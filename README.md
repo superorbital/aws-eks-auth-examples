@@ -127,6 +127,7 @@ See:
 | Name | Description | Type | Required |
 |------|-------------|------|:--------:|
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Kubernetes cluster name | `string` | no |
+| <a name="input_create_access_entries"></a> [create\_access\_entries](#input\_create\_access\_entries) | Should we create the access entries? | `bool` | no |
 | <a name="input_create_test_users"></a> [create\_test\_users](#input\_create\_test\_users) | Should we create the test IAM users and keys? | `bool` | no |
 | <a name="input_dev_role_id"></a> [dev\_role\_id](#input\_dev\_role\_id) | AWS IAM username for the primary user/owner | `string` | no |
 | <a name="input_k8s_version"></a> [k8s\_version](#input\_k8s\_version) | Kubernetes cluster version | `string` | no |
