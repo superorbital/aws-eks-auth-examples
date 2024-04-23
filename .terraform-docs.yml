@@ -1,0 +1,20 @@
+formatter: "markdown table"
+
+sections:
+  show:
+    - requirements
+    - providers
+    - inputs
+    - outputs
+
+sort:
+  enabled: true
+  by: required
+
+settings:
+  default: false
+  lockfile: false
+
+output:
+  file: README.md
+  mode: inject
