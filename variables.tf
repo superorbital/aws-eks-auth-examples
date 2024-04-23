@@ -25,23 +25,23 @@ variable "vpc_cidr" {
 variable "create_test_users" {
   type        = bool
   description = "Should we create the test IAM users and keys?"
-  default     = true
+  default     = false
 }
 
 variable "setup_irsa" {
   type        = bool
   description = "Should we setup the IRSA components?"
-  default     = true
+  default     = false
 }
 
 variable "setup_pod_identity" {
   type        = bool
   description = "Should we setup the Pod Identity components?"
-  default     = true
+  default     = false
 }
 
 variable "setup_cross_account_sts" {
   type        = bool
   description = "Should we setup the cross account STS components?"
-  default     = true
+  default     = false
 }

@@ -70,22 +70,24 @@ module "eks" {
     }
   }
 
-  access_entries = {
-    # One access entry with a policy associated
-    admin = {
-      kubernetes_groups = []
-      principal_arn     = "arn:aws:iam::${local.account_id}:user/${var.dev_role_id}"
-
-      policy_associations = {
-        owner = {
-          policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
-          access_scope = {
-            type = "cluster"
-          }
-        }
-      }
-    }
-  }
+  # Since we are expecting the user to run Terraform with their user credentials
+  # and not via CI/CD we don't need this entry, since it will already exist.
+  #
+  #access_entries = {
+  #  # One access entry with a policy associated
+  #  admin = {
+  #    kubernetes_groups = []
+  #    principal_arn     = "arn:aws:iam::${local.account_id}:user/${var.dev_role_id}"
+  #    policy_associations = {
+  #      owner = {
+  #        policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+  #        access_scope = {
+  #          type = "cluster"
+  #        }
+  #      }
+  #    }
+  #  }
+  #}
 }
 
 module "aws_auth" {

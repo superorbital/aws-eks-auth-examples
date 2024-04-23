@@ -12,7 +12,7 @@ provider "aws" {
 
 provider "aws" {
   profile = "aws-auth-account-two"
-  alias  = "number_two"
+  alias   = "number_two"
   default_tags {
     tags = {
       cluster     = local.name
