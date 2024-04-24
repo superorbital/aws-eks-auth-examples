@@ -21,12 +21,4 @@ output "ec2_irsa_role_arn" {
   value       = aws_iam_role.ec2_list_instances[*].arn
 }
 
-output "sts_local_account_role_arn" {
-  description = "The STS role ARN in the local account."
-  value       = aws_iam_role.local_account_access_serviceaccount[*].arn
-}
-
-output "sts_remote_account_role_arn" {
-  description = "The STS role ARN in the remote account."
-  value       = aws_iam_role.remote_account_access[*].arn
-}
+# There are two additional outputs defined, but commented out by default, in `second-account.tf`.
