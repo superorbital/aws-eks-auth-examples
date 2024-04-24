@@ -36,6 +36,7 @@ repos:
     # Security
     - id: detect-aws-credentials
       args: ['--allow-missing-credentials']
+      exclude: README.md
     - id: detect-private-key
 
 # Check shell scripts example

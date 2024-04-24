@@ -35,6 +35,8 @@ aws_access_key_id=REDACTED_ACCESS_KEY
 aws_secret_access_key=REDACTED_SECRET_ACCESS_KEY
 ```
 
+> If you have two AWS accounts to work with, then you should uncomment all the Terraform code in `second-account.tf`. However, if you have only one account then go ahead and leave it commented out, so that everything else will continue to work as expected.
+
 You will also need to know the username for your IAM user in account one (_e.g. ajohnson_), so that you can pass this information to Terraform.
 
 **NOTE**: There are other ways to configure these credentials, but this is the easiest way to explain and document. If you are familiar enough with all of this, feel free to tweak things to your liking.
@@ -120,7 +122,6 @@ See:
 | Name | Version |
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.44 |
-| <a name="provider_aws.number_two"></a> [aws.number\_two](#provider\_aws.number\_two) | ~> 5.44 |
 
 ## Inputs
 
@@ -144,6 +145,4 @@ See:
 | <a name="output_aws_iam_keys_user_three"></a> [aws\_iam\_keys\_user\_three](#output\_aws\_iam\_keys\_user\_three) | UserThree's AWS access and secret key. |
 | <a name="output_aws_iam_keys_user_two"></a> [aws\_iam\_keys\_user\_two](#output\_aws\_iam\_keys\_user\_two) | UserTwo's AWS access and secret key. |
 | <a name="output_ec2_irsa_role_arn"></a> [ec2\_irsa\_role\_arn](#output\_ec2\_irsa\_role\_arn) | The role ARN that needs to be added to Kubernetes Service Account annotations for IRSA. |
-| <a name="output_sts_local_account_role_arn"></a> [sts\_local\_account\_role\_arn](#output\_sts\_local\_account\_role\_arn) | The STS role ARN in the local account. |
-| <a name="output_sts_remote_account_role_arn"></a> [sts\_remote\_account\_role\_arn](#output\_sts\_remote\_account\_role\_arn) | The STS role ARN in the remote account. |
 <!-- END_TF_DOCS -->

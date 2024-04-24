@@ -1,8 +1,7 @@
 data "aws_caller_identity" "current" {}
-data "aws_caller_identity" "remote" {
-  provider = aws.number_two
-  count    = var.setup_cross_account_sts ? 1 : 0
-}
+
+# There is another data resource defined, but commented out by default, in `second-account.tf`.
+
 data "aws_availability_zones" "available" {}
 data "aws_region" "current" {}
 

@@ -10,18 +10,7 @@ provider "aws" {
   }
 }
 
-provider "aws" {
-  profile = "aws-auth-account-two"
-  alias   = "number_two"
-  default_tags {
-    tags = {
-      cluster     = local.name
-      environment = "development"
-      owner       = var.dev_role_id
-      terraform   = "true"
-    }
-  }
-}
+# There is another AWS provider defined, but commented out by default, in `second-account.tf`
 
 # We need this to configure the aws-auth Config Map
 provider "kubernetes" {
