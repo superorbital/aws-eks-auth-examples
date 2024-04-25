@@ -104,23 +104,7 @@ module "aws_auth" {
     }
   ]
 
-  # This could be disabled, so let's use try() to handle that.
-  aws_auth_users = try([
-    {
-      userarn  = aws_iam_user.user_one[0].arn
-      username = aws_iam_user.user_one[0].name
-      groups   = ["system:masters"]
-    },
-    {
-      userarn  = aws_iam_user.user_two[0].arn
-      username = aws_iam_user.user_two[0].name
-      groups   = ["eks-default"]
-    }
-  ], [{}])
-
-  #aws_auth_accounts = [
-  #  "777777777777"
-  #]
+  aws_auth_users = local.auth_cm_users
 }
 
 # We don't create these via the EKS module, because we want more control
