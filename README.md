@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD033 -->
 # aws-eks-auth-examples README
 
-> **NOTE**: This Terraform code is inteneded to accompany this article, which takes hands-on deep-dive into the various options that are avaliable to control access between AWS and EKS clusters.
+> **NOTE**: The Terraform code in this repo is intended to accompany the linked [article](https://superorbital.io/blog/aws-auth-and-kubernetes-deep-dive/), which takes a hands-on deep-dive into the various options that are avaliable to control access between AWS and EKS clusters.
 > https://superorbital.io/blog/aws-auth-and-kubernetes-deep-dive/
 
 This will spin up an EKS cluster in AWS that can be used to explore authentication and authorization options.
